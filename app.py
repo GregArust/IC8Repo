@@ -2,9 +2,11 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 
 
+from flask import Flask, jsonify
+from flask_cors import CORS
+
 app = Flask(__name__)
 CORS(app)
-
 
 # Sample data
 chocolates = [
@@ -22,6 +24,11 @@ chocolates = [
         "name": "White Chocolate",
         "image": "https://m.media-amazon.com/images/I/61-pg5u+9pL.jpg",
         "price": 6.49
+    },
+    {
+        "name": "Cream Chocolate",
+        "image": "https://m.media-amazon.com/images/I/61-pg5u+9pL.jpg",
+        "price": 15.49
     }
 ]
 
