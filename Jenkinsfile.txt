@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                sshagent(['ubuntu']) {
+                sshagent(['ubuntu2']) {
                     sh '''
                     ssh -o StrictHostKeyChecking=no ubuntu@52.90.89.215 <<EOF
 if [ ! -d "repo" ]; then
@@ -22,7 +22,7 @@ EOF
         
         stage('Install Dependencies') {
             steps {
-                sshagent(['ubuntu']) {
+                sshagent(['ubuntu2']) {
                     sh '''
                     ssh -o StrictHostKeyChecking=no ubuntu@52.90.89.215 <<EOF
 sudo apt update
@@ -36,7 +36,7 @@ EOF
         
         stage('Build and Run') {
             steps {
-                sshagent(['ubuntu']) {
+                sshagent(['ubuntu2']) {
                     sh '''
                     ssh -o StrictHostKeyChecking=no ubuntu@52.90.89.215 <<EOF
 cd repo
